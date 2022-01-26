@@ -70,7 +70,7 @@ async function  fetchPokemon(id) {
     .then(async data =>{
         await createPokemon(data)
         spinner.style.display="none"
-        console.error('Que Miras ? te crees hacker por pulsar F12???')
+       
 
     })
 }
