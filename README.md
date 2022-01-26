@@ -1,5 +1,5 @@
 # Pokedex 
-Pokedex powered with ![pokeapi.co](pokeapi.co) 
+Pokedex powered with **pokeapi.co**
 
 
 # Screenshot
