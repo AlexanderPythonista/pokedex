@@ -38,7 +38,7 @@ form.addEventListener('keyup', (e)=>{
     e.preventDefault()
 const input = document.querySelector('#form')
 const form = input.value.toLowerCase()
-console.log(form);
+
 
 if(form.length ==0){
     offset =1
@@ -49,7 +49,7 @@ input.reset
 removeChildNodes(pokemonContainer)
 fetchPokemon(form)
 offset =10
-console.log(form);
+
 
 })
 home.addEventListener('click', ()=>{
@@ -70,6 +70,7 @@ async function  fetchPokemon(id) {
     .then(async data =>{
         await createPokemon(data)
         spinner.style.display="none"
+        alert.log('Que Miras ? te crees hacker por pulsar F12???')
 
     })
 }
@@ -114,20 +115,19 @@ async function createPokemon(pokemon){
     type2.classList.add('type2')
     name.textContent = pokemon.name
     type.textContent=pokemon.types[0].type.name
-    console.log(pokemon.types[0].type.name);
+    
     try{
     type2.textContent=pokemon.types[1].type.name
     
 }
 catch{
-    console.log('none');
-    console.log(type2.textContent.length);
+   
     type2.classList.add('none')
 }
     card.appendChild(spriteContainer)
     card.appendChild(number)
     card.appendChild(name)
-    console.log("Type:", type.textContent);
+  
     if(type.textContent == 'fire'){
         type.classList.add('btn-r')
         
@@ -232,33 +232,32 @@ catch{
     
     await p.classList.add('p');
 
-console.log('LOG: ', pokemon);
+
 
 
 
 des=pokemon.species.url
-console.log(des.name);
+
 await fetch((des))
 .then(res=>res.json())
 .then(async data=>{
     
     des=data.flavor_text_entries[26].flavor_text
     lang=data.flavor_text_entries[26].language.name
-    console.log('*****************************');
+    
     
     
     if(lang!='es'){
         des=data.flavor_text_entries[28].flavor_text
-        console.log(des, 'olo');
+       
         p.textContent=des
     }
-    console.log(data);
-    console.log('***********************************');
+ 
     p.textContent=des
     if(lang!='es'){
         try {
             des=data.flavor_text_entries[43].flavor_text
-            console.log(des, 'olo');
+            
             p.textContent=des    
         } catch (e) {
             des=data.flavor_text_entries[15].flavor_text
@@ -268,17 +267,17 @@ await fetch((des))
     }
     if(lang!='es'){
         des=data.flavor_text_entries[27].flavor_text
-        console.log(des, 'olo');
+       
         p.textContent=des
 
     }if(lang!='es'){
         des=data.flavor_text_entries[15].flavor_text
-        console.log(des, 'olo');
+        
         p.textContent=des
 
     }if(lang!='es'){
         des=data.flavor_text_entries[23].flavor_text
-        console.log(des, 'olo');
+        
         p.textContent=des
 
     }
